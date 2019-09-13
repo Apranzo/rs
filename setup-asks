@@ -1,0 +1,46 @@
+# Example answer file for setup-alpine script
+# If you don't want to use a certain option, then comment it out
+ 
+# Use US layout with US variant
+KEYMAPOPTS="us us"
+ 
+# Set hostname to rs
+HOSTNAMEOPTS="-n rs"
+ 
+# Contents of /etc/network/interfaces
+INTERFACESOPTS="auto lo
+iface lo inet loopback
+ 
+auto eth0
+iface eth0 inet static
+    address 192.168.56.2
+    netmask 255.255.255.252
+auto eth1
+    iface eth1 inet dhcp
+                hostname rs
+"
+ 
+# Search domain of example.com, Google public nameserver
+DNSOPTS="-d example.com 8.8.8.8"
+ 
+# Set timezone to UTC
+TIMEZONEOPTS="-z Europe/Moscow"
+ 
+# set http/ftp proxy
+PROXYOPTS="none"
+ 
+# Add a random mirror
+APKREPOSOPTS="-f"
+ 
+# Install Openssh
+SSHDOPTS="-c dropbear"
+ 
+# Use openntpd
+#NTPOPTS="-c chrony"
+ 
+# Use /dev/sda as a data disk
+DISKOPTS="-m data /dev/sda"
+ 
+# Setup in /media/sdb1
+LBUOPTS="/media/sdb1"
+APKCACHEOPTS="/media/sdb1/cache"
