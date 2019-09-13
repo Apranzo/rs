@@ -39,7 +39,7 @@ SSHDOPTS="-c dropbear"
 NTPOPTS="-c chrony"
  
 # Use /dev/sda as a data disk
-DISKOPTS="-m data /dev/sda"
+DISKOPTS="-m sys /dev/sda"
  
 # Setup in /media/sdb1
 LBUOPTS="/media/sdb1"
